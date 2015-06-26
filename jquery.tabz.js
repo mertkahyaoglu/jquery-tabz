@@ -21,7 +21,8 @@
 	        $this.find('> div').eq(options.active).show();
 	        $this.find('> ul li').eq(options.active).addClass('active');
 
-	        var eventFunction = eval(function() {
+	        var eventFunction = eval(function(e) {
+	        	e.preventDefault();
 	        	var currentTab = $(this).addClass("active");
 	        	currentTab.siblings("li").removeClass("active");
 	        	var targetDiv = currentTab.find("a").attr(options.attribute);
